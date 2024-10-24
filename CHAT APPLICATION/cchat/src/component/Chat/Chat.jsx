@@ -54,7 +54,7 @@ const Chat = () => {
     <div className="chatPage">
       <div className="chatContainer">
         <div className="header">
-          <h2>CHAT APPLICATION</h2>
+          <h2>Hangout Hub</h2>
           <button onClick={() => window.location.href = '/'} className="closeBtn">
             <i className="fas fa-times"></i> {/* Font Awesome cross icon */}
           </button>
