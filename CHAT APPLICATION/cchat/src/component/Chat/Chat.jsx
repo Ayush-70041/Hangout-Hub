@@ -6,7 +6,7 @@ import sendLogo from "../../images/send.png";
 import Message from "../Message/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom";
 
-const ENDPOINT = "http://192.168.32.86:4500/";
+const ENDPOINT = "https://hangout-hub-1.onrender.com";
 let socket;
 
 const Chat = () => {
