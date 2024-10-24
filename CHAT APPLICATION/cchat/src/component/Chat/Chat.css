@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #1f1f1f; /* Dark gray */
+    --secondary-color: #00796b; /* Teal */
+    --background-color: #121212; /* Very dark gray for the page */
+    --chat-background: #1e1e1e; /* Dark background for chat container */
+    --header-background: #00796b; /* Teal for header */
+    --text-color: #000000; /* Black text */
+    --input-background: #424242; /* Dark input background */
+    --input-text-color: #ffffff; /* White text for input */
+    --button-background: #448aff; /* Blue for buttons */
+    --button-hover: #63a4ff; /* Lighter blue on hover */
+}
+
+.chatPage {
+    background-color: var(--background-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatContainer {
+    background-color: var(--chat-background);
+    height: 60%; /* Fixed height */
+    width: 50%; /* Fixed width */
+    border-radius: 10px; /* Optional rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.header {
+    background-color: rgb(51, 51, 51);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.header > h2 {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.closeBtn {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.closeBtn:hover {
+    color: rgb(168, 165, 165);
+}
+
+.chatBox {
+    flex: 1; /* Take up remaining space */
+    box-sizing: border-box;
+    color: var(--text-color);
+    padding: 20px;
+    overflow-y: auto;
+    background: #1c1c1c; /* Darker gray for chat area */
+}
+
+.inputBox {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to start */
+    padding: 10px;
+    background-color: rgb(51, 51, 51);
+}
+
+#chatInput {
+    flex-grow: 1; /* Allow the input to grow */
+    max-width: calc(100% - 100px); /* Further reduce width for left and right space */
+    max-height: 40px; /* Limit height to prevent overflow */
+    min-height: 40px; /* Minimum height */
+    border: none; /* Remove border */
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    resize: none; /* Disable resizing */
+    margin: 0 15px; /* Increased margin on both sides */
+}
+
+.sendBtn {
+    background-color: var(--button-background);
+    color: var(--text-color);
+    border: none; /* Remove border */
+    width: 55px; /* Fixed width for the button */
+    height: 50px; /* Fixed height */
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.sendBtn:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.sendBtn > img {
+    width: 24px;
+    filter: brightness(100) invert();
+}
+
+/* Scrollbar customization */
+.chatBox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatBox::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.chatBox::-webkit-scrollbar-track {
+    background: #303030; /* Dark gray for scrollbar track */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .chatContainer {
+        width: 80%; /* Increase width on smaller screens */
+    }
+
+    .header > h2 {
+        font-size: 1.3rem; /* Smaller heading size */
+    }
+
+    #chatInput {
+        margin: 0 10px; /* Reduced margin on smaller screens */
+    }
+
+    .sendBtn {
+        width: 45px; /* Slightly smaller button */
+        height: 45px; /* Adjusted height */
+    }
+}
+
+@media (max-width: 480px) {
+    .chatContainer {
+        height: 80%; /* Increase height for smaller screens */
+    }
+
+    .header {
+        padding: 0 10px; /* Reduced padding */
+    }
+
+    .header > h2 {
+        font-size: 1.2rem; /* Even smaller heading */
+    }
+
+    #chatInput {
+        margin: 0 5px; /* Minimal margin */
+    }
+
+    .sendBtn {
+        width: 40px; /* Smaller button for mobile */
+        height: 40px; /* Smaller height */
+    }
+}
